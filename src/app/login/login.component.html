@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <img src="./assets/nlac.png" width="80px" />
+    <a class="navbar-brand" href="#"
+      ><b>Northern Luzon Adventist College Academy</b>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="card" style="width: 23rem">
+    <img class="img-logo" src="./assets/cakes.png" style="z-index: 1" alt="" />
+    <div class="card-body">
+      <form [formGroup]="loginform" (ngSubmit)="SaveFunct()">
+        <h3 class="text-uppercase text-center"><b>Login</b></h3>
+        <div class="alert alert-danger" style="z-index: 1" *ngIf="divshow">
+          <p>I'm sorry.You entered an <b>invalid email/password</b>!</p>
+        </div>
+        <div class="col input-group mb-3 mt-3">
+          <span class="input-group-text" id="basic-addon1">
+            <img src="./assets/user1.png" width="20px" />
+          </span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Username"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+            formControlName="user"
+          />
+        </div>
+
+        <div class="col input-group mb-3">
+          <!-- <span class="input-group-text" id="basic-addon1">
+            <img src="./assets/pass.png" width="20" />
+          </span> -->
+          <!-- <input
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            aria-label="Password"
+            aria-describedby="basic-addon1"
+            formControlName="pass"
+          /> -->
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon1">
+              <img src="./assets/lock.png" width="20px" />
+            </span>
+            <input
+              placeholder="Password"
+              aria-label="Password"
+              [type]="passwordVisible ? 'text' : 'password'"
+              class="form-control col-12"
+              formControlName="pass"
+            />
+            <span class="input-group-text" (click)="togglePasswordVisibility()">
+              <i
+                class="bi bi-eye-fill"
+                [class.bi-eye]="passwordVisible"
+                [class.bi-eye-slash]="!passwordVisible"
+              ></i>
+            </span>
+          </div>
+        </div>
+        <button
+          type="submit "
+          class="btn col-12 mx-auto text-white"
+          style="background-color: #337ccf"
+        >
+          Sign In
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

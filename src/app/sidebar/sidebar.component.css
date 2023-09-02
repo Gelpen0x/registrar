@@ -1,0 +1,9 @@
+.btn:active{
+    border: none;
+}
+.btn:hover{
+    background-color: aquamarine;
+}
+.btn::cue{
+    background-color: black;
+}

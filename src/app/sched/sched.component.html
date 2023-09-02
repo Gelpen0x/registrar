@@ -1,0 +1,90 @@
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div class="col">
+      <app-nav-slide></app-nav-slide>
+      <div class="container">
+        <div class="account-header mt-2">
+          <h3>Class Schedule</h3>
+        </div>
+        <div class="drop-group d-flex gap-3">
+          <select class="drop shadow-sm">
+            <option>Grade 1</option>
+            <option>Grade 2</option>
+            <option>Grade 3</option>
+            <option>Grade 4</option>
+            <option>Grade 5</option>
+          </select>
+          <select class="drop shadow-sm">
+            <option>STEM</option>
+            <option>ABM</option>
+            <option>ICT</option>
+            <option>KAPADOG</option>
+          </select>
+        </div>
+
+        <!--Content-->
+        <div class="header-c mt-2 d-flex justify-content-between mt-4">
+          <span>Grade & Section : <u>Grade 11</u></span>
+          <span
+            >Adviser: <b><u>JOE MARI</u></b>
+          </span>
+        </div>
+        <table class="table mt-3 table-bordered">
+          <thead>
+            <tr>
+              <th scope="col" class="text-center">TIME DURATION</th>
+              <ng-container *ngFor="let day of daysInSchedule">
+                <th scope="col" class="text-center">{{ day.day }}</th>
+              </ng-container>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let time of timeSlots">
+              <tr>
+                <th class="text-center" scope="row">{{ time.time }}</th>
+                <ng-container *ngFor="let day of daysInSchedule">
+                  <td class="text-center">
+                    <ng-container
+                      *ngFor="let s of getScheduleForSlot(time, day)"
+                    >
+                      <div>
+                        {{ s.subject_name }} <br />
+                        <hr />
+                        {{ s.fname }} {{ s.middle }} {{ s.lname }}
+                      </div>
+                    </ng-container>
+                  </td>
+                </ng-container>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+
+        <div class="header-c mt-2 d-flex justify-content-between">
+          <div>
+            <p class="lh-1">
+              <sup>Prepared By:</sup>
+              <br />
+              <b>LORNA P. BERNAL LPT.</b>
+            </p>
+          </div>
+
+          <div>
+            <p class="lh-1">
+              <sup>Noted By:</sup>
+              <br />
+              <b>RUSS B. DEL CASTILLO PhD.</b>
+              <br />
+              <sub>Academy Principal</sub>
+            </p>
+          </div>
+        </div>
+        <button (click)="onPrintButtonClick()" class="btn btn-primary">
+          <img src="./assets/print.png" width="30px" />&nbsp;Print
+        </button>
+
+        <!--End of content-->
+      </div>
+    </div>
+  </div>
+</div>

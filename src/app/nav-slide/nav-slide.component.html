@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-xxl w-100" style="width: 100%">
+  <div
+    class="container-fluid d-flex justify-content-between align-items-center"
+  >
+    <div>
+      <div class="d-flex justify-content-center align-items-center">
+        <img src="./assets/nlac.png" width="50px" />
+        <header class="px-2">NLAC Registrar</header>
+      </div>
+    </div>
+    <div class="text-end px-2" id="timeDisplay">{{ formattedTime }}</div>
+  </div>
+</nav>
+
+<div
+  class="offcanvas offcanvas-start"
+  data-bs-scroll="true"
+  tabindex="-1"
+  id="offcanvasWithBothOptions"
+  aria-labelledby="offcanvasWithBothOptionsLabel"
+>
+  <div class="offcanvas-header">
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body d-flex align-items-center flex-column gap-2">
+    <div>
+      <img src="./assets/profile.png" alt="" width="120px" />
+    </div>
+    <div class="bg-info p-2 rounded">Registrar Jenny Doe</div>
+    <button class="btn">Home</button>
+    <button class="btn">Enrollment</button>
+    <button class="btn">Student</button>
+    <button class="btn">Schedule</button>
+    <button class="btn">Grade</button>
+    <button class="btn">Accounts</button>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="account-header mt-2">
+    <h3>Update Student Account</h3>
+  </div>
+
+  <div class="d-flex justify-content-around mt-3">
+    <div class="card box2 col-6 p-3 d-flex align-items-center flex-column">
+      <form
+        class="row g-3"
+        [formGroup]="updateStud"
+        (ngSubmit)="onupdateStud()"
+      >
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <label class="form-label">First Name</label>
+            <input formControlName="fname" type="text" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Middle</label>
+            <input formControlName="middle" type="text" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Last Name</label>
+            <input formControlName="lname" type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <label class="form-label">Contact</label>
+            <input formControlName="contact" type="text" class="form-control" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Grade Level</label>
+            <input formControlName="grade_level" class="form-control" />
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <label class="form-label">Birth Place</label>
+            <input formControlName="birth" type="text" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Birth Place</label>
+            <input formControlName="birth" type="text" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Role</label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Rights</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <label class="form-label">Email</label>
+            <input formControlName="email" type="email" class="form-control" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Password</label>
+            <div class="input-group">
+              <input
+                placeholder="Password"
+                aria-label="Password"
+                [type]="passwordVisible ? 'text' : 'password'"
+                class="form-control col-12"
+                formControlName="pass"
+              />
+              <span class="input-group-text">
+                <i
+                  class="bi bi-eye-fill"
+                  [class.bi-eye]="passwordVisible"
+                  [class.bi-eye-slash]="!passwordVisible"
+                ></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center gap-2">
+          <button type="submit" class="btn btn-primary" style="width: 60px">
+            Save
+          </button>
+          <button
+            class="btn btn-primary"
+            routerLink="/side/student/studentList"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

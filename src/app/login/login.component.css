@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap");
+* {
+  font-family: "Jost", sans-serif;
+  overflow: hidden;
+}
+.container {
+  overflow: hidden;
+}
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0px 5px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.c-1 {
+  position: absolute;
+  z-index: -1;
+  width: 209.14px;
+  height: 203.79px;
+  left: 750px;
+  top: 99px;
+  border-radius: 100px;
+  background: linear-gradient(
+    to right top,
+    #418de3,
+    #6ba3e8,
+    #8eb8ed,
+    #b1cef2,
+    #d3e3f6
+  );
+  transform: rotate(39.5deg);
+}
+.c-2 {
+  position: absolute;
+  z-index: -1;
+  width: 119px;
+  height: 118.19px;
+  left: 533.18px;
+  top: 200px;
+  border-radius: 100px;
+  background: linear-gradient(
+    to right top,
+    #418de3,
+    #6ba3e8,
+    #8eb8ed,
+    #b1cef2,
+    #d3e3f6
+  );
+  transform: rotate(39.5deg);
+}
+.c-3 {
+  position: absolute;
+  z-index: -1;
+  width: 190px;
+  height: 190px;
+  left: 550px;
+  top: 400px;
+  border-radius: 200px;
+  background: linear-gradient(
+    to right top,
+    #418de3,
+    #6ba3e8,
+    #8eb8ed,
+    #b1cef2,
+    #d3e3f6
+  );
+  transform: rotate(39.5deg);
+}
+.card-title {
+  color: #333333;
+}
+
+.card-body {
+  padding: 2rem;
+}
+.btn {
+  color: #333333;
+  font-weight: bold;
+  border: none;
+  margin-top: 1.5rem;
+}
+
+.text-span {
+  border-bottom: solid 5px #ffcb42;
+  font-family: "Jost", sans-serif;
+}

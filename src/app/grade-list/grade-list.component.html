@@ -1,0 +1,125 @@
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div
+      class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 shadow text-white"
+      style="background-color: #4b56d2; border-radius: 0px 20px 20px 0"
+    >
+      <div class="d-flex flex-column align-items-center px-3 pt-2 min-vh-100">
+        <br />
+        <div class="img d-flex flex-column">
+          <img src="./assets/profile.png" alt="" width="120px" />
+          <br />
+          <div *ngFor="let r of registrar">
+            <p><b>Welcome,</b> {{ r.fname }}</p>
+          </div>
+        </div>
+        <div
+          class="btn-groups d-flex flex-column gap-2 mt-2 w-100 align-items-start"
+        >
+          <button class="btn text-white" routerLink="/home">
+            <img src="./assets/home.png" width="30px" />&nbsp; Home
+          </button>
+          <button class="btn text-white" routerLink="/enrollment">
+            <img src="./assets/stats.png" width="30px" />&nbsp; Enrollment
+          </button>
+          <button class="btn text-white" routerLink="/student">
+            <img src="./assets/users-alt.png" width="30px" />&nbsp; Student
+          </button>
+          <button class="btn text-white" routerLink="/sched">
+            <img src="./assets/calendar.png" width="30px" />&nbsp; Schedule
+          </button>
+          <button class="btn text-white" routerLink="/grade">
+            <img src="./assets/text-check.png" width="30px" />&nbsp; Grades
+          </button>
+          <button class="btn text-white" routerLink="/account">
+            <img src="./assets/user.png" width="30px" />&nbsp; Account
+          </button>
+
+          <button class="btn text-white mt-4">
+            <img src="./assets/exit.png" width="30px" />&nbsp; Logout
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <app-nav-slide></app-nav-slide>
+
+      <div class="container">
+        <div class="account-header mt-2">
+          <h3>Grade Records</h3>
+        </div>
+        <div class="search-bar col-4 mt-2">
+          <form class="d-flex" role="search">
+            <div class="input-group">
+              <input
+                width="10px"
+                class="form-control"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </div>
+            <button class="btn" type="submit">
+              <img src="./assets/search.png" alt="Search" width="30px" />
+            </button>
+          </form>
+        </div>
+        <div class="d-flex gap-5">
+          <div class="text1 mt-4">
+            <h6><b>Subject Teacher: </b> Jhon Doe</h6>
+            <h6 class="mt-4"><b>Subject: </b> PE 1</h6>
+          </div>
+
+          <div class="text2 mt-4">
+            <h6><b>Grade Level: </b> 12</h6>
+            <h6 class="mt-4"><b>Section/Strand: </b> STEM</h6>
+          </div>
+        </div>
+
+        <!--Content-->
+        <div class="col-12 mt-4">
+          <div
+            class="card border-0 shadow recent-sales overflow-auto"
+            style="height: 23rem"
+          >
+            <div class="card-body border-0">
+              <h5 class="card-title"><span></span></h5>
+
+              <table class="table table-borderless datatable">
+                <thead>
+                  <tr>
+                    <th class="text-center" scope="col" style="color: #4b56d2">
+                      Student
+                    </th>
+                    <th class="text-center" scope="col" style="color: #4b56d2">
+                      1st Grading
+                    </th>
+                    <th class="text-center" scope="col" style="color: #4b56d2">
+                      2nd Grading
+                    </th>
+                    <th class="text-center" scope="col" style="color: #4b56d2">
+                      3rd Grading
+                    </th>
+                    <th class="text-center" scope="col" style="color: #4b56d2">
+                      4th Grading
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center">Miguel O Hara</td>
+                    <td class="text-center">98</td>
+                    <td class="text-center">99</td>
+                    <td class="text-center">87</td>
+                    <td class="text-center">89</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--End of content-->
+      </div>
+    </div>
+  </div>
+</div>

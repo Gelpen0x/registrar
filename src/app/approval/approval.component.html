@@ -1,0 +1,70 @@
+<div class="card-body border-0" style="height: 390px">
+  <div>
+    <h5 class="card-title">
+      Student List | <span>Total: {{ student.length }}</span>
+    </h5>
+  </div>
+  <table class="table table-borderless datatable">
+    <thead>
+      <tr>
+        <th class="text-center" scope="col">LRN</th>
+        <th class="text-center" scope="col">Name</th>
+        <th class="text-center" scope="col">Grade Level</th>
+        <th class="text-center" scope="col">Registration</th>
+        <th class="text-center" scope="col">Contact No.</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody class="scrollable">
+      <tr *ngFor="let i of student">
+        <td class="text-center">{{ i.LRN }}</td>
+        <td class="text-center">{{ i.fname }} {{ i.middle }} {{ i.lname }}</td>
+        <td class="text-center">{{ i.grade_level }}</td>
+        <td class="text-center">{{ i.date_register }}</td>
+        <td class="text-center">{{ i.contact_no }}</td>
+        <td>
+          <form [formGroup]="saveApproval" (ngSubmit)="saveApprove(i.LRN)">
+            <button
+              type="submit"
+              formControlName="approval"
+              class="btn btn-primary"
+            >
+              Approve
+            </button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <table class="table table-borderless datatable">
+              <thead>
+                <tr>
+                  <th scope="col">LRN</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Registration</th>
+                  <th scope="col">Contact No.</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody class="scrollable">
+                <tr *ngFor="let i of student">
+                  <td>{{ i.LRN }}</td>
+                  <td>{{ i.fname }} {{ i.middle }} {{ i.lname }}</td>
+                  <td>{{ i.date_register }}</td>
+                  <td>{{ i.contact_no }}</td>
+                  <td>
+                    <form [formGroup]="saveApproval" (ngSubmit)="saveapprove()>
+                      <button
+                        formControlName="approval"
+                        class="btn btn-primary"
+                        (click)="updatestud(i.LRN)"
+                      >
+                        Approve
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              </tbody>
+            </table> -->
+</div>

@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div
+      class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 shadow text-white"
+      style="background-color: #4b56d2; border-radius: 0px 20px 20px 0"
+    >
+      <div class="d-flex flex-column align-items-center px-3 pt-2 min-vh-100">
+        <br />
+        <div class="img d-flex flex-column">
+          <img src="./assets/profile.png" alt="" width="120px" />
+          <br />
+          <div *ngFor="let r of registrar">
+            <p><b>Welcome,</b> {{ r.fname }}</p>
+          </div>
+        </div>
+        <div
+          class="btn-groups d-flex flex-column gap-2 mt-2 w-100 align-items-start"
+        >
+          <button class="btn text-white" routerLink="/side/home/approval">
+            <img src="./assets/home.png" width="30px" />&nbsp; Home
+          </button>
+          <button class="btn text-white" routerLink="/side/enrollment">
+            <img src="./assets/stats.png" width="30px" />&nbsp; Enrollment
+          </button>
+          <button class="btn text-white" routerLink="/side/student/studentList">
+            <img src="./assets/users-alt.png" width="30px" />&nbsp; Student
+          </button>
+          <!-- <button class="btn text-white" routerLink="/side/sched">
+            <img src="./assets/calendar.png" width="30px" />&nbsp; Schedule
+          </button> -->
+          <button class="btn text-white" routerLink="/side/grade">
+            <img src="./assets/text-check.png" width="30px" />&nbsp; Grades
+          </button>
+          <button
+            class="btn text-white"
+            routerLink="/side/account/updateTeacher"
+          >
+            <img src="./assets/teacher.png" width="30px" />&nbsp; Teacher
+          </button>
+          <button class="btn text-white" routerLink="/side/registrarAccount">
+            <img src="./assets/user.png" width="30px" />&nbsp; Account
+          </button>
+
+          <button class="btn text-white mt-4" routerLink="/login">
+            <img src="./assets/exit.png" width="30px" />&nbsp; Logout
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

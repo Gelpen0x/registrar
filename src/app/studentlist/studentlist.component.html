@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="account-header mt-2">
+    <h3>Student</h3>
+  </div>
+  <div class="row">
+    <div class="search-bar col-4 d-flex justify-content-end w-100">
+      <form class="d-flex" role="search">
+        <div class="input-group">
+          <input
+            width="10px"
+            class="form-control"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </div>
+        <button class="btn" type="submit">
+          <img src="./assets/search.png" alt="Search" width="30px" />
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="card border-0 shadow recent-sales overflow-auto mt-2">
+    <div class="card-bodyborder-0" style="height: 440px">
+      <table class="table table-borderless datatable 0t-2">
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">LRN</th>
+            <th scope="col" class="text-center">Name</th>
+            <th scope="col" class="text-center">Grade Level</th>
+            <th scope="col" class="text-center">Section/Strand</th>
+            <th scope="col" class="text-center">Contact</th>
+            <th scope="col" class="text-center">Edit</th>
+            <th scope="col" class="text-center">Requirements</th>
+            <th scope="col" class="text-center">Grades</th>
+          </tr>
+        </thead>
+        <tbody class="scrollable">
+          <tr *ngFor="let es of enrolledStud">
+            <td class="text-center">{{ es.LRN }}</td>
+            <td class="text-center">
+              {{ es.fname }} {{ es.middle }} {{ es.lname }}
+            </td>
+            <td class="text-center">{{ es.grade_level }}</td>
+            <td class="text-center">{{ es.strand }}</td>
+            <td class="text-center">{{ es.contact_no }}</td>
+            <td class="text-center">
+              <button class="btn" (click)="updatestud(es.LRN)">
+                <img src="./assets/memo.png" width="35px" />
+              </button>
+            </td>
+            <td class="text-center">
+              <button
+                class="btn"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <img src="./assets/memo.png" width="35px" />
+              </button>
+            </td>
+            <td class="text-center">
+              <button class="btn">
+                <img src="./assets/test.png" width="35px" />
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
