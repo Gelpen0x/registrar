@@ -28,46 +28,48 @@
         <div class="col-12 mt-4">
           <div class="card border-0 shadow recent-sales overflow-auto">
             <div class="card-body border-0">
-              <h5 class="card-title"><span></span></h5>
+              <!-- Loop through gradesStud and group by grade level and section -->
+              <ng-container *ngFor="let grade of gradesStud">
+                <h5 class="card-title">
+                  Grade {{ grade.grade_level }} | Section:
+                  {{ grade.section_name }}
+                </h5>
 
-              <table class="table table-borderless datatable">
-                <thead>
-                  <tr>
-                    <th class="text-center" scope="col" style="color: #4b56d2">
-                      Subject
-                    </th>
-                    <th class="text-center" scope="col" style="color: #4b56d2">
-                      Teacher
-                    </th>
-                    <th class="text-center" scope="col" style="color: #4b56d2">
-                      Number of Student
-                    </th>
-                    <th class="text-center" scope="col" style="color: #4b56d2">
-                      Grade level
-                    </th>
-                    <th class="text-center" scope="col" style="color: #4b56d2">
-                      Section/Strand
-                    </th>
-                    <th class="text-center" scope="col" style="color: #4b56d2">
-                      Student Grades
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let grade of gradesStud">
-                    <td class="text-center">{{ grade.subject_name }}</td>
-                    <td class="text-center">{{ grade.faculty_id }}</td>
-                    <td class="text-center">{{ grade.max_student }}</td>
-                    <td class="text-center">{{ grade.grade }}</td>
-                    <td class="text-center">{{ grade.strand }}</td>
-                    <td class="text-center">
-                      <button class="btn" routerLink="/gradeList">
-                        <img src="./assets/grade.png" width="30px" />
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                <table class="table table-borderless datatable">
+                  <thead>
+                    <tr>
+                      <th
+                        class="text-center"
+                        scope="col"
+                        style="color: #4b56d2"
+                      >
+                        Subject
+                      </th>
+                      <th
+                        class="text-center"
+                        scope="col"
+                        style="color: #4b56d2"
+                      >
+                        Teacher
+                      </th>
+                      <th
+                        class="text-center"
+                        scope="col"
+                        style="color: #4b56d2"
+                      >
+                        Schedule
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-striped">
+                    <tr>
+                      <td class="text-center">{{ grade.subject_name }}</td>
+                      <td class="text-center">{{ grade.teacher_name }}</td>
+                      <td class="text-center">{{ grade.day }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </ng-container>
             </div>
           </div>
         </div>
