@@ -24,6 +24,9 @@ import { UpdateteacherComponent } from './updateteacher/updateteacher.component'
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { RegistrarAccComponent } from './registrar-acc/registrar-acc.component';
 import { StudentlistComponent } from './studentlist/studentlist.component';
+import { TeacherSchedComponent } from './teacher-sched/teacher-sched.component';
+import { GradeRecordsComponent } from './grade-records/grade-records.component';
+import { SubjectGradeComponent } from './subject-grade/subject-grade.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { StudentlistComponent } from './studentlist/studentlist.component';
     UpdateTeacherComponent,
     RegistrarAccComponent,
     StudentlistComponent,
+    TeacherSchedComponent,
+    GradeRecordsComponent,
+    SubjectGradeComponent,
   ],
   imports: [
     HttpClientModule,

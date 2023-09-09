@@ -4,11 +4,11 @@ import { Route, Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-grade',
-  templateUrl: './grade.component.html',
-  styleUrls: ['./grade.component.css'],
+  selector: 'app-grade-records',
+  templateUrl: './grade-records.component.html',
+  styleUrls: ['./grade-records.component.css'],
 })
-export class GradeComponent {
+export class GradeRecordsComponent {
   registrar: any;
   gradesStud: any;
   groupedGrades: any[] = []; // New array to store grouped data
@@ -36,7 +36,8 @@ export class GradeComponent {
     this.gradesStud.forEach((grade: any) => {
       const existingGroup = this.groupedGrades.find(
         (group) =>
-          group.grade_level === grade.grade_level &&
+          group.section_id === grade.section_id &&
+          group.grade === grade.grade &&
           group.section_name === grade.section_name
       );
 
@@ -44,11 +45,28 @@ export class GradeComponent {
         existingGroup.values.push(grade);
       } else {
         this.groupedGrades.push({
-          grade_level: grade.grade_level,
+          section_id: grade.section_id,
+          grade: grade.grade,
           section_name: grade.section_name,
           values: [grade],
         });
       }
     });
+  }
+
+  // getTeacher(faculty_id: any) {
+  //   localStorage.setItem('id', faculty_id);
+  //   this.route.navigate(['/side/grade/teacherSched']);
+  // }
+  getTeacher(faculty_id: any, section_id: any) {
+    this.route.navigate([
+      '/side/grade/teacherSched',
+      {
+        faculty_id: faculty_id,
+        // grade: grade,
+        // section_name: section_name,
+        section_id: section_id,
+      },
+    ]);
   }
 }

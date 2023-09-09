@@ -37,6 +37,16 @@ export class PostService {
   schedule() {
     return this.http.get(this.url + 'schedule.php');
   }
+  // scheduleTeacher(faculty_id: any) {
+  //   return this.http.get(this.url + `schedule.php?faculty_id=${faculty_id}`);
+  // }
+  scheduleTeacher(faculty_id: any, section_id: any) {
+    return this.http.get(
+      this.url +
+        `schedule.php?faculty_id=${faculty_id}&section_id=${section_id}`
+    );
+  }
+
   enrollies() {
     return this.http.get(this.url + 'enrolSummary.php');
   }

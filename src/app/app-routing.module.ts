@@ -18,6 +18,9 @@ import { UpdateTeacherComponent } from './update-teacher/update-teacher.componen
 import { UpdateteacherComponent } from './updateteacher/updateteacher.component';
 import { RegistrarAccComponent } from './registrar-acc/registrar-acc.component';
 import { StudentlistComponent } from './studentlist/studentlist.component';
+import { TeacherSchedComponent } from './teacher-sched/teacher-sched.component';
+import { GradeRecordsComponent } from './grade-records/grade-records.component';
+import { SubjectGradeComponent } from './subject-grade/subject-grade.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -52,7 +55,15 @@ const routes: Routes = [
       },
       { path: 'gradeList', component: GradeListComponent },
       { path: 'nav', component: NavSlideComponent },
-      { path: 'grade', component: GradeComponent },
+      {
+        path: 'grade',
+        component: GradeComponent,
+        children: [
+          { path: 'gradeRecords', component: GradeRecordsComponent },
+          { path: 'subjectGrade', component: SubjectGradeComponent },
+          { path: 'teacherSched', component: TeacherSchedComponent },
+        ],
+      },
       { path: 'sched', component: SchedComponent },
       { path: 'teacher', component: TeacherComponent },
       { path: 'registrarAccount', component: RegistrarAccComponent },

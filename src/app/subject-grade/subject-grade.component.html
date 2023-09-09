@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="account-header mt-2">
+    <h3>
+      <button class="btn" routerLink="/side/grade/gradeRecords">
+        <img src="./assets/left.png" width="50px" />&nbsp;
+      </button>
+      Subject Grade
+    </h3>
+  </div>
+  <div class="card border-0 shadow recent-sales overflow-auto">
+    <div class="card-body border-0" style="height: 450px">
+      <table class="table table-bordered table-striped datatable">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Section</th>
+            <th scope="col">Midterm</th>
+            <th scope="col">Finals</th>
+            <th scope="col">Second Grading</th>
+            <th scope="col">Third Grading</th>
+            <th scope="col">Fourth Grading</th>
+            <!-- <ng-container *ngFor="let day of daysInSchedule">
+              <th scope="col" class="text-center">{{ day.day }}</th>
+            </ng-container> -->
+          </tr>
+        </thead>
+        <tbody class="table-striped scrollable">
+          <!-- <tr *ngFor="let cs of classSched">
+            <td>{{ cs.time }}</td>
+            <td class="text-center">
+              {{ cs.subject_name }}
+              <br />
+              <hr />
+              {{ cs.fname }} {{ cs.middle }} {{ cs.lname }}
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- <button (click)="onPrintButtonClick()" class="btn btn-primary">
+    <img src="./assets/print.png" width="30px" />&nbsp;Print
+  </button> -->
+</div>

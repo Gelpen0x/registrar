@@ -2,78 +2,8 @@
   <div class="row flex-nowrap">
     <div class="col">
       <app-nav-slide></app-nav-slide>
-
-      <div class="container">
-        <div class="account-header mt-2">
-          <h3>Grade Records</h3>
-        </div>
-        <div class="search-bar col-4 mt-2">
-          <form class="d-flex" role="search">
-            <div class="input-group">
-              <input
-                width="10px"
-                class="form-control"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-            </div>
-            <button class="btn" type="submit">
-              <img src="./assets/search.png" alt="Search" width="30px" />
-            </button>
-          </form>
-        </div>
-
-        <!--Content-->
-        <div class="col-12 mt-4">
-          <div class="card border-0 shadow recent-sales overflow-auto">
-            <div class="card-body border-0">
-              <!-- Loop through gradesStud and group by grade level and section -->
-              <ng-container *ngFor="let grade of gradesStud">
-                <h5 class="card-title">
-                  Grade {{ grade.grade_level }} | Section:
-                  {{ grade.section_name }}
-                </h5>
-
-                <table class="table table-borderless datatable">
-                  <thead>
-                    <tr>
-                      <th
-                        class="text-center"
-                        scope="col"
-                        style="color: #4b56d2"
-                      >
-                        Subject
-                      </th>
-                      <th
-                        class="text-center"
-                        scope="col"
-                        style="color: #4b56d2"
-                      >
-                        Teacher
-                      </th>
-                      <th
-                        class="text-center"
-                        scope="col"
-                        style="color: #4b56d2"
-                      >
-                        Schedule
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="table-striped">
-                    <tr>
-                      <td class="text-center">{{ grade.subject_name }}</td>
-                      <td class="text-center">{{ grade.teacher_name }}</td>
-                      <td class="text-center">{{ grade.day }}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </ng-container>
-            </div>
-          </div>
-        </div>
-        <!--End of content-->
+      <div>
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>

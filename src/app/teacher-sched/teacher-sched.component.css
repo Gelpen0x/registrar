@@ -1,0 +1,32 @@
+.drop {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  width: 30%;
+  height: 40px;
+  text-align: center;
+}
+.scrollable {
+  overflow-y: scroll;
+}
+th {
+  color: #4b56d2;
+  text-align: center;
+}
+.horizontal-subjects {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.subject-name {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.no-subject {
+  display: none;
+}

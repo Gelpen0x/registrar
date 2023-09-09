@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="account-header mt-2">
+    <h3>
+      <button class="btn" routerLink="/side/grade/gradeRecords">
+        <img src="./assets/left.png" width="50px" />&nbsp;
+      </button>
+      Teacher's Schedule
+    </h3>
+    <div class="d-flex justify-content-evenly">
+      <div *ngFor="let gs of gradeSec; let first = first">
+        <ng-container *ngIf="first">
+          <h6>Grade and Section: {{ gs.section_name }} {{ gs.grade }}</h6>
+        </ng-container>
+      </div>
+
+      <div *ngFor="let t of teacher; let first = first">
+        <ng-container *ngIf="first">
+          <h6>Adviser: {{ t.fname }} {{ t.middle }} {{ t.lname }}</h6>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="card border-0 shadow recent-sales overflow-auto">
+    <div class="card-body border-0" style="height: 450px">
+      <table class="table table-bordered table-striped datatable">
+        <thead>
+          <tr>
+            <th scope="col">Time</th>
+            <ng-container *ngFor="let day of daysInSchedule">
+              <th scope="col" class="text-center">{{ day.day }}</th>
+            </ng-container>
+          </tr>
+        </thead>
+        <tbody class="table-striped scrollable">
+          <ng-container *ngFor="let cs of classSched">
+            <tr>
+              <td class="text-center">{{ cs.time }}</td>
+              <ng-container *ngFor="let day of daysInSchedule">
+                <td class="text-center" *ngIf="cs.day === day.day">
+                  {{ cs.subject_name }}
+                </td>
+              </ng-container>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button (click)="onPrintButtonClick()" class="btn btn-primary">
+    <img src="./assets/print.png" width="30px" />&nbsp;Print
+  </button>
+</div>
