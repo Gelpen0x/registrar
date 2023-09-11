@@ -47,6 +47,13 @@ export class PostService {
     );
   }
 
+  subjectGrade(faculty_id: any, section_id: any, subject_id: any) {
+    return this.http.get(
+      this.url +
+        `subjectGrade.php?faculty_id=${faculty_id}&section_id=${section_id}&subject_id=${subject_id}`
+    );
+  }
+
   enrollies() {
     return this.http.get(this.url + 'enrolSummary.php');
   }

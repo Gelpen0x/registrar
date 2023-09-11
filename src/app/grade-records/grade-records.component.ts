@@ -69,4 +69,17 @@ export class GradeRecordsComponent {
       },
     ]);
   }
+
+  getSubject(faculty_id: any, section_id: any, subject_id: any) {
+    this.route.navigate([
+      '/side/grade/subjectGrade',
+      {
+        faculty_id: faculty_id,
+        // grade: grade,
+        // section_name: section_name,
+        section_id: section_id,
+        subject_id: subject_id,
+      },
+    ]);
+  }
 }

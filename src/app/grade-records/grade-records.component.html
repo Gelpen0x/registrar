@@ -57,6 +57,13 @@
               <tr *ngFor="let item of gradeGroup.values">
                 <td>
                   <a
+                    (click)="
+                      getSubject(
+                        item.faculty_id,
+                        gradeGroup.section_id,
+                        item.subject_id
+                      )
+                    "
                     routerLink="/side/grade/subjectGrade"
                     style="color: inherit; text-decoration: none"
                   >

@@ -1,9 +1,16 @@
-.btn:active{
-    border: none;
+.btn:active {
+  border: none;
 }
-.btn:hover{
-    background-color: aquamarine;
+.btn:hover {
+  background-color: aquamarine;
 }
-.btn::cue{
-    background-color: black;
+.btn::cue {
+  background-color: black;
+}
+
+/* Hide elements with the "sidebar-to-hide" class when printing */
+@media print {
+  .sidebar-to-hide {
+    display: none !important;
+  }
 }

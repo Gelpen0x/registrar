@@ -30,3 +30,23 @@ th {
 .no-subject {
   display: none;
 }
+
+/* Add this CSS to your stylesheet */
+.schedule-cell {
+  border: 1px solid #ccc;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Style the table headers if needed */
+.table thead th {
+  background-color: #f0f0f0;
+}
+
+/* Hide the sidebar and print button when printing */
+@media print {
+  .back,
+  .btn-primary {
+    display: none !important;
+  }
+}

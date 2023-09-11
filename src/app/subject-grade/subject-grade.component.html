@@ -2,10 +2,23 @@
   <div class="account-header mt-2">
     <h3>
       <button class="btn" routerLink="/side/grade/gradeRecords">
-        <img src="./assets/left.png" width="50px" />&nbsp;
+        <img src="./assets/left.png" width="30px" />&nbsp;
       </button>
       Subject Grade
     </h3>
+  </div>
+  <div class="d-flex justify-content-evenly">
+    <div *ngFor="let gs of gradeSec; let first = first">
+      <ng-container *ngIf="first">
+        <h6>Grade and Section: {{ gs.section_name }} {{ gs.grade }}</h6>
+      </ng-container>
+    </div>
+
+    <div *ngFor="let t of teacher; let first = first">
+      <ng-container *ngIf="first">
+        <h6>Adviser: {{ t.fname }} {{ t.middle }} {{ t.lname }}</h6>
+      </ng-container>
+    </div>
   </div>
   <div class="card border-0 shadow recent-sales overflow-auto">
     <div class="card-body border-0" style="height: 450px">
@@ -13,7 +26,6 @@
         <thead>
           <tr>
             <th scope="col">Name</th>
-            <th scope="col">Section</th>
             <th scope="col">Midterm</th>
             <th scope="col">Finals</th>
             <th scope="col">Second Grading</th>
@@ -25,15 +37,21 @@
           </tr>
         </thead>
         <tbody class="table-striped scrollable">
-          <!-- <tr *ngFor="let cs of classSched">
-            <td>{{ cs.time }}</td>
+          <tr *ngFor="let sg of studGrade">
+            <td>{{ sg.fname }} {{ sg.middle }} {{ sg.lname }}</td>
             <td class="text-center">
-              {{ cs.subject_name }}
-              <br />
-              <hr />
-              {{ cs.fname }} {{ cs.middle }} {{ cs.lname }}
+              {{ sg.first_grading }}
             </td>
-          </tr> -->
+            <td class="text-center">
+              {{ sg.second_grading }}
+            </td>
+            <td class="text-center">
+              {{ sg.third_grading }}
+            </td>
+            <td class="text-center">
+              {{ sg.fourth_grading }}
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

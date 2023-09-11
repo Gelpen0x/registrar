@@ -25,14 +25,12 @@ export class TeacherSchedComponent {
   // }
 
   ngOnInit(): void {
-    // Get the faculty_id from the route parameters
     this.route.params.subscribe((params) => {
       const faculty_id = params['faculty_id'];
       const section_id = params['section_id'];
       const grade_level = params['grade_level'];
       const section_name = params['section_name'];
 
-      // Pass the faculty_id as an argument to the schedule method
       this.call
         .scheduleTeacher(faculty_id, section_id)
         .subscribe((result: any) => {
@@ -46,6 +44,12 @@ export class TeacherSchedComponent {
   }
 
   onPrintButtonClick() {
+    // Add the print-specific stylesheet
+    const style = document.createElement('link');
+    style.type = 'text/css';
+    style.rel = 'stylesheet';
+    document.head.appendChild(style);
     window.print();
+    style.remove();
   }
 }

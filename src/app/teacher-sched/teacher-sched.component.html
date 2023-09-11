@@ -1,8 +1,8 @@
 <div class="container">
   <div class="account-header mt-2">
     <h3>
-      <button class="btn" routerLink="/side/grade/gradeRecords">
-        <img src="./assets/left.png" width="50px" />&nbsp;
+      <button class="btn back" routerLink="/side/grade/gradeRecords">
+        <img src="./assets/left.png" width="30px" />&nbsp;
       </button>
       Teacher's Schedule
     </h3>
@@ -36,9 +36,11 @@
             <tr>
               <td class="text-center">{{ cs.time }}</td>
               <ng-container *ngFor="let day of daysInSchedule">
-                <td class="text-center" *ngIf="cs.day === day.day">
+                <td *ngIf="cs.day === day.day" class="schedule-cell">
                   {{ cs.subject_name }}
                 </td>
+                <td *ngIf="cs.day !== day.day"></td>
+                <!-- Empty cell for other days -->
               </ng-container>
             </tr>
           </ng-container>
