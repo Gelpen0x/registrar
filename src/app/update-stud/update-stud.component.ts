@@ -23,7 +23,13 @@ export class UpdateStudComponent {
     lname: new FormControl(null),
     contact: new FormControl(null),
     grade_level: new FormControl(null),
+    gender: new FormControl(null),
     birth: new FormControl(null),
+    mother_name: new FormControl(null),
+    father_name: new FormControl(null),
+    parent_occupation: new FormControl(null),
+    religion: new FormControl(null),
+    address: new FormControl(null),
     email: new FormControl(null),
     pass: new FormControl(null),
   });
@@ -49,6 +55,18 @@ export class UpdateStudComponent {
         this.student.grade_level
       );
       this.updateStud.controls['birth'].setValue(this.student.birthplace);
+      this.updateStud.controls['gender'].setValue(this.student.gender);
+      this.updateStud.controls['mother_name'].setValue(
+        this.student.mother_name
+      );
+      this.updateStud.controls['father_name'].setValue(
+        this.student.father_name
+      );
+      this.updateStud.controls['parent_occupation'].setValue(
+        this.student.parent_occupation
+      );
+      this.updateStud.controls['address'].setValue(this.student.address);
+      this.updateStud.controls['religion'].setValue(this.student.religion);
       this.updateStud.controls['email'].setValue(this.student.email);
       this.updateStud.controls['pass'].setValue(this.student.password);
     });

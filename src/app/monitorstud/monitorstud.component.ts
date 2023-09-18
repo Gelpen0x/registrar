@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PostService } from '../post.service';
 import { Route, Router } from '@angular/router';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 @Component({
   selector: 'app-monitorstud',
@@ -9,7 +10,7 @@ import { Route, Router } from '@angular/router';
 })
 export class MonitorstudComponent {
   information: any;
-  LRN: any;
+  enrol_id: any;
   student: any;
   fname: any;
   email: any;
@@ -19,6 +20,7 @@ export class MonitorstudComponent {
   password: any;
   registrar: any;
   divshow: any = false;
+  resetModal: any;
 
   constructor(private call: PostService, private route: Router) {}
   ngOnInit(): void {
@@ -29,17 +31,24 @@ export class MonitorstudComponent {
       this.registrar = result;
     });
   }
-  onConfirm(sid: any, fname: any) {
-    this.LRN = sid;
+  onConfirm(sid: any, fname: any, middle: any, lname: any) {
+    this.enrol_id = sid;
     this.fname = fname;
+    this.middle = middle;
+    this.lname = lname;
     this.divshow = true;
   }
+
   onDelete(flag: any) {
     if (flag == 1) {
-      this.call.delStud(this.LRN).subscribe((result: any) => {
+      this.call.delStud(this.enrol_id).subscribe((result: any) => {
         this.student = result;
       });
     }
+    this.divshow = false;
+  }
+
+  onModalHidden() {
     this.divshow = false;
   }
 }

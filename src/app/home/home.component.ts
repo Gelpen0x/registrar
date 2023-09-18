@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   registrar: any;
   saveApproval: FormGroup;
   s: any;
+  searchQuery: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -40,5 +41,19 @@ export class HomeComponent implements OnInit {
     this.call.updatestud({ LRN: LRN }).subscribe((result: any) => {
       this.student = this.student.filter((s: any) => s.LRN !== LRN);
     });
+  }
+  searchStudents() {
+    console.log('Search Query:', this.searchQuery);
+    if (this.searchQuery.trim() !== '') {
+      this.student = this.student.filter((i: any) =>
+        i.fname.toLowerCase().includes(this.searchQuery.toLowerCase())
+      );
+      console.log('Filtered Students:', this.student);
+    } else {
+      console.log('Reloading Original Data');
+      this.call.student1().subscribe((result: any) => {
+        this.student = result;
+      });
+    }
   }
 }

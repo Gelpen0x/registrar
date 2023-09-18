@@ -1,49 +1,48 @@
 <div class="container">
   <div class="account-header mt-2">
-    <h3>
+    <h3 class="removeThis">
       <button class="btn back" routerLink="/side/grade/gradeRecords">
         <img src="./assets/left.png" width="30px" />&nbsp;
       </button>
       Teacher's Schedule
     </h3>
-    <div class="d-flex justify-content-evenly">
+    <div class="d-flex justify-content-between">
       <div *ngFor="let gs of gradeSec; let first = first">
         <ng-container *ngIf="first">
           <h6>Grade and Section: {{ gs.section_name }} {{ gs.grade }}</h6>
         </ng-container>
       </div>
 
-      <div *ngFor="let t of teacher; let first = first">
+      <div
+        class="d-flex justify-content-between flex-row-reverse"
+        *ngFor="let t of teacher; let first = first"
+      >
         <ng-container *ngIf="first">
           <h6>Adviser: {{ t.fname }} {{ t.middle }} {{ t.lname }}</h6>
         </ng-container>
       </div>
     </div>
   </div>
-  <div class="card border-0 shadow recent-sales overflow-auto">
+  <div class="mt-2 card border-0 shadow recent-sales overflow-auto">
     <div class="card-body border-0" style="height: 450px">
       <table class="table table-bordered table-striped datatable">
         <thead>
           <tr>
             <th scope="col">Time</th>
-            <ng-container *ngFor="let day of daysInSchedule">
-              <th scope="col" class="text-center">{{ day.day }}</th>
-            </ng-container>
+            <th scope="col">Schedule</th>
           </tr>
         </thead>
-        <tbody class="table-striped scrollable">
-          <ng-container *ngFor="let cs of classSched">
-            <tr>
-              <td class="text-center">{{ cs.time }}</td>
-              <ng-container *ngFor="let day of daysInSchedule">
-                <td *ngIf="cs.day === day.day" class="schedule-cell">
-                  {{ cs.subject_name }}
-                </td>
-                <td *ngIf="cs.day !== day.day"></td>
-                <!-- Empty cell for other days -->
-              </ng-container>
-            </tr>
-          </ng-container>
+
+        <tbody class="scrollable">
+          <tr class="table-striped" *ngFor="let cs of classSched">
+            <td class="text-center">{{ cs.time }}</td>
+            <td class="text-center">
+              <b>{{ cs.day }}</b
+              ><br />
+              <hr />
+              {{ cs.subject_name }}
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

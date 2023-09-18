@@ -45,18 +45,4 @@ export class EnrollmentComponent implements OnInit {
       0
     );
   }
-
-  search() {
-    const lowercaseQuery = this.searchQuery.toLowerCase();
-
-    if (!this.searchQuery) {
-      // If the search query is empty, reset the filtered data to show all records.
-      this.filteredEnrollment = this.enrollment;
-    } else {
-      // If there is a search query, filter the enrollment data based on grade_level.
-      this.filteredEnrollment = this.enrollment.filter((e: any) =>
-        e.grade_level.toLowerCase().includes(lowercaseQuery)
-      );
-    }
-  }
 }

@@ -1,9 +1,7 @@
 <div class="card-body border-0" style="height: 390px">
-  <h5 class="card-title">
-    Student List | <span>Total: {{ student.length }}</span>
-  </h5>
+  <h5 class="card-title"></h5>
 
-  <table class="table table-borderless datatable">
+  <table class="table table-striped datatable p-4">
     <thead>
       <tr>
         <th scope="col">Name</th>
@@ -11,31 +9,19 @@
         <th scope="col">Contact No.</th>
         <th scope="col">Email</th>
         <th scope="col">Password</th>
-        <th scope="col">Registration</th>
         <th scope="col">Payment Approval</th>
+        <th scope="col">Registration</th>
         <th scope="col">Officially Enrolled</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
-    <tbody class="scrollable">
+    <tbody class="scrollable p-5">
       <tr *ngFor="let i of student">
-        <td>{{ i.fname }} {{ i.middle }} {{ i.lname }}</td>
-        <td class="text-center">{{ i.grade_level }}</td>
-        <td>{{ i.contact_no }}</td>
-        <td>{{ i.email }}</td>
-        <td>{{ i.password }}</td>
-        <td>
-          <div
-            class="row d-flex flex-column justify-content-center align-items-center"
-          >
-            <div class="col d-flex justify-content-center">
-              <img src="./assets/check.png" width="28px" />
-            </div>
-            <div class="col text-center">
-              {{ i.regapproval_date }}
-            </div>
-          </div>
-        </td>
+        <td class=""><br />{{ i.fname }} {{ i.middle }} {{ i.lname }}</td>
+        <td class=""><br />{{ i.grade_level }}</td>
+        <td><br />{{ i.contact_no }}</td>
+        <td><br />{{ i.email }}</td>
+        <td><br />{{ i.password }}</td>
         <td>
           <div
             class="row d-flex flex-column justify-content-center align-items-center"
@@ -48,13 +34,42 @@
             </div>
           </div>
         </td>
-        <td></td>
+        <td>
+          <div
+            class="row d-flex flex-column justify-content-center align-items-center"
+          >
+            <div class="col d-flex justify-content-center">
+              <img
+                *ngIf="i.regapproval_date"
+                src="./assets/check.png"
+                width="28px"
+              />
+            </div>
+            <div class="col text-center">
+              {{ i.regapproval_date }}
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="row d-flex flex-column justify-content-center align-items-center"
+          >
+            <div class="col d-flex justify-content-center">
+              <img
+                *ngIf="i.regapproval_date"
+                src="./assets/check.png"
+                width="28px"
+              />
+            </div>
+            <div class="col text-center">{{ i.regapproval_date }}</div>
+          </div>
+        </td>
         <td>
           <button
             class="btn"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
-            (click)="onConfirm(i.LRN, i.fname)"
+            (click)="onConfirm(i.enrol_id, i.fname, i.middle, i.lname)"
           >
             <img src="./assets/trash.png" width="28px" />&nbsp;
           </button>
@@ -87,12 +102,12 @@
           <h5>
             <i class="fa fa-exclamation-triangle" aria-hidden="true"></i
             >&nbsp;Are you sure you want to delete
-            <b>{{ fname }} {{ middle }} {{ lname }}</b>
+            <b style="color: #4b56d2"
+              ><u>{{ fname }} {{ middle }} {{ lname }}</u> ?</b
+            >
           </h5>
           <br />
-        </div>
-        <div class="modal-footer">
-          <div class="p-3">
+          <div class="p-3 text-align-center">
             <button
               type="button"
               data-bs-dismiss="modal"

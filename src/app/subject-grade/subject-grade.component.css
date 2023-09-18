@@ -2,3 +2,15 @@ th {
   color: #4b56d2;
   text-align: center;
 }
+
+.scrollable {
+  overflow-y: scroll;
+}
+
+@media print {
+  .back,
+  .removeThis,
+  .btn-primary {
+    display: none !important;
+  }
+}

@@ -46,6 +46,7 @@ th {
 /* Hide the sidebar and print button when printing */
 @media print {
   .back,
+  .removeThis,
   .btn-primary {
     display: none !important;
   }

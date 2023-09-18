@@ -30,4 +30,13 @@ export class SubjectGradeComponent {
     //    this.studGrade = result;
     //  });
   }
+  onPrintButtonClick() {
+    // Add the print-specific stylesheet
+    const style = document.createElement('link');
+    style.type = 'text/css';
+    style.rel = 'stylesheet';
+    document.head.appendChild(style);
+    window.print();
+    style.remove();
+  }
 }
